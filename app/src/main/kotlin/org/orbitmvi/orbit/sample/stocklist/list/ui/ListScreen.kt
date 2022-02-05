@@ -20,13 +20,11 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.launch
 import org.orbitmvi.orbit.sample.stocklist.R
+import org.orbitmvi.orbit.sample.stocklist.collectAsState
+import org.orbitmvi.orbit.sample.stocklist.collectSideEffect
 import org.orbitmvi.orbit.sample.stocklist.common.ui.AppBar
 import org.orbitmvi.orbit.sample.stocklist.list.business.ListSideEffect
 import org.orbitmvi.orbit.sample.stocklist.list.business.ListViewModel
@@ -34,19 +32,14 @@ import org.orbitmvi.orbit.sample.stocklist.list.business.ListViewModel
 @Composable
 fun ListScreen(navController: NavController, viewModel: ListViewModel) {
 
-    val state = viewModel.container.stateFlow.collectAsState().value
-
-    LaunchedEffect(viewModel) {
-        launch {
-            viewModel.container.sideEffectFlow.collect { handleSideEffect(navController, it) }
-        }
-    }
+    val state = viewModel.collectAsState()
+    viewModel.collectSideEffect { handleSideEffect(navController, it) }
 
     Column {
         AppBar(stringResource(id = R.string.app_name))
 
         LazyColumn {
-            items(state.stocks) { stock ->
+            items(state.value.stocks) { stock ->
                 StockItem(stock) {
                     viewModel.viewMarket(stock.itemName)
                 }

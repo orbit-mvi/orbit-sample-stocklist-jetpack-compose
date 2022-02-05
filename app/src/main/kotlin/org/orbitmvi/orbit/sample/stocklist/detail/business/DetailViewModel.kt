@@ -25,6 +25,7 @@ import org.orbitmvi.orbit.ContainerHost
 import org.orbitmvi.orbit.sample.stocklist.streaming.stock.StockRepository
 import org.orbitmvi.orbit.syntax.simple.intent
 import org.orbitmvi.orbit.syntax.simple.reduce
+import org.orbitmvi.orbit.syntax.simple.repeatOnSubscription
 import org.orbitmvi.orbit.viewmodel.container
 
 @HiltViewModel
@@ -38,9 +39,11 @@ class DetailViewModel @Inject constructor(
     override val container = container<DetailState, Nothing>(DetailState(), savedStateHandle) { requestStock() }
 
     private fun requestStock(): Unit = intent(registerIdling = false) {
-        stockRepository.stockDetails(itemName).collect {
-            reduce {
-                state.copy(stock = it)
+        repeatOnSubscription {
+            stockRepository.stockDetails(itemName).collect {
+                reduce {
+                    state.copy(stock = it)
+                }
             }
         }
     }

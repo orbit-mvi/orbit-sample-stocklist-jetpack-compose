@@ -24,10 +24,10 @@ plugins {
 }
 
 android {
-    compileSdk = 30
+    compileSdk = 31
     defaultConfig {
         minSdk = 23
-        targetSdk = 30
+        targetSdk = 31
         versionCode = 1
         versionName = "1.0"
         applicationId = "org.orbitmvi.orbit.sample.stocklist.compose"
@@ -78,8 +78,8 @@ android {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    implementation("org.orbit-mvi:orbit-core:4.1.3")
-    implementation("org.orbit-mvi:orbit-viewmodel:4.1.3")
+    implementation("org.orbit-mvi:orbit-core:4.3.1")
+    implementation("org.orbit-mvi:orbit-viewmodel:4.3.1")
 
     implementation("androidx.navigation:navigation-fragment-ktx:2.3.5")
     implementation("androidx.navigation:navigation-ui-ktx:2.3.5")
