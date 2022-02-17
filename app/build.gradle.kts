@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Mikołaj Leszczyński & Appmattus Limited
+ * Copyright 2021-2022 Mikołaj Leszczyński & Appmattus Limited
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -78,8 +78,9 @@ android {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    implementation("org.orbit-mvi:orbit-core:4.3.1")
-    implementation("org.orbit-mvi:orbit-viewmodel:4.3.1")
+    implementation("org.orbit-mvi:orbit-core:4.3.2")
+    implementation("org.orbit-mvi:orbit-viewmodel:4.3.2")
+    implementation("org.orbit-mvi:orbit-compose:4.3.2")
 
     implementation("androidx.navigation:navigation-fragment-ktx:2.3.5")
     implementation("androidx.navigation:navigation-ui-ktx:2.3.5")

@@ -32,8 +32,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import org.orbitmvi.orbit.compose.collectAsState
 import org.orbitmvi.orbit.sample.stocklist.R
-import org.orbitmvi.orbit.sample.stocklist.collectAsState
 import org.orbitmvi.orbit.sample.stocklist.common.ui.AppBar
 import org.orbitmvi.orbit.sample.stocklist.common.ui.PriceBox
 import org.orbitmvi.orbit.sample.stocklist.detail.business.DetailViewModel
