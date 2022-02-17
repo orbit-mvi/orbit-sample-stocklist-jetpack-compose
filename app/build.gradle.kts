@@ -49,7 +49,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.0.0"
+        kotlinCompilerExtensionVersion = "1.1.0"
     }
 
     buildFeatures {
@@ -82,32 +82,32 @@ dependencies {
     implementation("org.orbit-mvi:orbit-viewmodel:4.3.2")
     implementation("org.orbit-mvi:orbit-compose:4.3.2")
 
-    implementation("androidx.navigation:navigation-fragment-ktx:2.3.5")
-    implementation("androidx.navigation:navigation-ui-ktx:2.3.5")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.4.1")
+    implementation("androidx.navigation:navigation-ui-ktx:2.4.1")
     implementation("com.lightstreamer:ls-android-client:4.2.5")
-    implementation("androidx.lifecycle:lifecycle-common-java8:2.4.0-alpha02")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.4.0-alpha02")
+    implementation("androidx.lifecycle:lifecycle-common-java8:2.4.1")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.4.1")
 
     // Dependency Injection
-    implementation("com.google.dagger:hilt-android:2.38.1")
-    kapt("com.google.dagger:hilt-android-compiler:2.38.1")
+    implementation("com.google.dagger:hilt-android:2.40.5")
+    kapt("com.google.dagger:hilt-android-compiler:2.40.5")
 
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.1.5")
 
     // Jetpack Compose
-    implementation("androidx.activity:activity-compose:1.3.0")
-    implementation("androidx.compose.ui:ui:1.0.0")
+    implementation("androidx.activity:activity-compose:1.4.0")
+    implementation("androidx.compose.ui:ui:1.1.0")
     // Tooling support (Previews, etc.)
-    implementation("androidx.compose.ui:ui-tooling:1.0.0")
+    implementation("androidx.compose.ui:ui-tooling:1.1.0")
     // Foundation (Border, Background, Box, Image, Scroll, shapes, animations, etc.)
-    implementation("androidx.compose.foundation:foundation:1.0.0")
+    implementation("androidx.compose.foundation:foundation:1.1.0")
     // Material Design
-    implementation("androidx.compose.material:material:1.0.0")
+    implementation("androidx.compose.material:material:1.1.0")
     // Material design icons
-    implementation("androidx.compose.material:material-icons-core:1.0.0")
+    implementation("androidx.compose.material:material-icons-core:1.1.0")
     // Navigation
-    implementation("androidx.navigation:navigation-compose:2.4.0-alpha05")
-    implementation("androidx.hilt:hilt-navigation-compose:1.0.0-alpha03")
+    implementation("androidx.navigation:navigation-compose:2.4.1")
+    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
     // Lifecycle
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-alpha07")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.4.1")
 }
