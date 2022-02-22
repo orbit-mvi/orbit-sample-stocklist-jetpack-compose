@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Mikołaj Leszczyński & Appmattus Limited
+ * Copyright 2021-2022 Mikołaj Leszczyński & Appmattus Limited
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
@@ -33,6 +32,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import org.orbitmvi.orbit.compose.collectAsState
 import org.orbitmvi.orbit.sample.stocklist.R
 import org.orbitmvi.orbit.sample.stocklist.common.ui.AppBar
 import org.orbitmvi.orbit.sample.stocklist.common.ui.PriceBox
@@ -42,7 +42,7 @@ import org.orbitmvi.orbit.sample.stocklist.detail.business.DetailViewModel
 @Suppress("LongMethod")
 fun DetailScreen(navController: NavController, viewModel: DetailViewModel) {
 
-    val state = viewModel.container.stateFlow.collectAsState().value
+    val state = viewModel.collectAsState().value
 
     Column {
         AppBar(state.stock?.name ?: stringResource(id = R.string.app_name)) {
